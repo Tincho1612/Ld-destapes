@@ -1,4 +1,20 @@
 ---
-// Redirect to default locale
-return Astro.redirect('/es/', 302);
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import Features from '@/components/sections/Features.astro';
+import Logos from '@/components/sections/Logos.astro';
+import Coverage from '@/components/sections/Coverage.astro';
+import Pricing from '@/components/sections/Pricing.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import CTA from '@/components/sections/CTA.astro';
 ---
+
+<BaseLayout>
+  <Hero />
+  <Logos />
+  <Features />
+  <Coverage />
+  <Pricing />
+  <FAQ />
+  <CTA />
+</BaseLayout>

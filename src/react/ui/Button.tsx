@@ -8,6 +8,8 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   disabled?: boolean;
+  target?: string;
+  rel?: string;
 }
 
 export default function Button({
@@ -18,6 +20,8 @@ export default function Button({
   type = 'button',
   className = '',
   disabled = false,
+  target,
+  rel,
 }: ButtonProps) {
   const baseClasses =
     'inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
@@ -30,7 +34,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} target={target} rel={rel}>
         {children}
       </a>
     );

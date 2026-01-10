@@ -3,6 +3,7 @@ import Container from '../ui/Container.astro';
 import Section from '../ui/Section.astro';
 import { getTranslations, getLocaleFromPath } from '@/i18n';
 import Button from '@/react/ui/Button';
+import { WHATSAPP_LINK } from '@/lib/constants';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const t = getTranslations(locale);
@@ -23,9 +24,11 @@ const t = getTranslations(locale);
         </p>
         <Button
           client:load
-          href={`/${locale}/#contact`}
+          href={WHATSAPP_LINK}
           variant="primary"
           class="text-lg px-8 py-4"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {t.pricing.cta}
         </Button>

@@ -3,8 +3,10 @@ import Header from '@/components/ui/Header.astro';
 import Footer from '@/components/ui/Footer.astro';
 import SEO from '@/components/ui/SEO.astro';
 import StructuredData from '@/components/ui/StructuredData.astro';
+import WhatsAppButton from '@/components/ui/WhatsAppButton.astro';
 import '@/styles/globals.css';
 import { getLocaleFromPath } from '@/i18n';
+import logoToro from '@/assets/logo-toro.svg';
 
 interface Props {
   title?: string;
@@ -21,6 +23,7 @@ const path = Astro.url.pathname;
 <html lang={locale}>
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href={logoToro.src} />
     <SEO title={title} description={description} image={image} locale={locale} path={path} />
     <StructuredData locale={locale} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,5 +39,6 @@ const path = Astro.url.pathname;
       <slot />
     </main>
     <Footer />
+    <WhatsAppButton />
   </body>
 </html>

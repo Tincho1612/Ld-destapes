@@ -2,15 +2,19 @@
 import Container from '../ui/Container.astro';
 import Section from '../ui/Section.astro';
 import { getTranslations, getLocaleFromPath } from '@/i18n';
-import banderitaLogo from '@/assets/cropped-banderita-parrilla-logo.png';
-import carnicosLogo from '@/assets/carnicos_transparent_cropped.png';
+import banderitaLogo from '@/assets/cropped-banderita-parrilla-logo.svg';
+import carnicosLogo from '@/assets/carnicos_transparent_cropped.svg';
+import ringoLogo from '@/assets/ringo-logo.svg';
+import hotelPaseoLogo from '@/assets/hotel-paseo.svg';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const t = getTranslations(locale);
 
 const clients = [
-  { name: 'Banderita Parrilla', logo: banderitaLogo },
-  { name: 'Cárnicos', logo: carnicosLogo },
+  { name: 'Banderita Parrilla', logo: banderitaLogo, type: 'svg' },
+  { name: 'Cárnicos', logo: carnicosLogo, type: 'svg' },
+  { name: 'Ringo', logo: ringoLogo, type: 'svg' },
+  { name: 'Hotel Paseo', logo: hotelPaseoLogo, type: 'svg' },
 ];
 ---
 
@@ -22,11 +26,19 @@ const clients = [
       </h2>
       <div class="flex flex-wrap items-center justify-center gap-12 sm:gap-16 lg:gap-20">
         {clients.map((client) => (
-          <div class="flex items-center justify-center h-20 sm:h-24 opacity-70 hover:opacity-100 transition-opacity">
+          <div
+            class={`flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity ${
+              client.name === 'Ringo'
+                ? 'h-24 sm:h-32 w-32 sm:w-40'
+                : client.name === 'Hotel Paseo'
+                ? 'h-20 sm:h-28 w-28 sm:w-36 -mt-2 sm:-mt-3'
+                : 'h-20 sm:h-24'
+            }`}
+          >
             <img
               src={client.logo.src}
               alt={client.name}
-              class="max-h-full max-w-full object-contain"
+              class="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all"
             />
           </div>
         ))}

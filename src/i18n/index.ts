@@ -36,8 +36,16 @@ export function getTranslations(locale: Locale): Translations {
 }
 
 export function getLocaleFromPath(pathname: string): Locale {
-  if (pathname.startsWith('/en')) return 'en';
-  return 'es';
+  if (pathname.startsWith('/en') || pathname === '/en') return 'en';
+  return 'es'; // Default to Spanish for root path and /es paths
+}
+
+export function getLocalePath(locale: Locale, path: string = ''): string {
+  if (locale === 'en') {
+    return `/en${path}`;
+  }
+  // For Spanish (default), use root path
+  return path || '/';
 }
 
 export { translations, type Locale, type Translations };

@@ -1,7 +1,8 @@
 ---
 import Container from '../ui/Container.astro';
-import { getTranslations, getLocaleFromPath } from '@/i18n';
+import { getTranslations, getLocaleFromPath, getLocalePath } from '@/i18n';
 import Button from '@/react/ui/Button';
+import { WHATSAPP_LINK } from '@/lib/constants';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const t = getTranslations(locale);
@@ -37,8 +38,12 @@ const t = getTranslations(locale);
 
   <Container>
     <div class="relative z-10 text-center max-w-4xl mx-auto animate-fade-in">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-        {t.hero.title}
+      <h1
+        id="typing-title"
+        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight"
+        data-text={t.hero.title}
+      >
+        <span id="typing-text"></span><span id="typing-cursor" class="typing-cursor">|</span>
       </h1>
       <p class="text-lg sm:text-xl text-neutral-600 mb-10 max-w-2xl mx-auto leading-relaxed">
         {t.hero.subtitle}
@@ -46,17 +51,19 @@ const t = getTranslations(locale);
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <Button
           client:load
-          href={`/${locale}/#contact`}
+          href={WHATSAPP_LINK}
           variant="primary"
-          class="w-full sm:w-auto"
+          className="w-full sm:w-auto"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {t.hero.ctaPrimary}
         </Button>
         <Button
           client:load
-          href={`/${locale}/#features`}
+          href={`${getLocalePath(locale)}#features`}
           variant="secondary"
-          class="w-full sm:w-auto"
+          className="w-full sm:w-auto"
         >
           {t.hero.ctaSecondary}
         </Button>
@@ -64,3 +71,69 @@ const t = getTranslations(locale);
     </div>
   </Container>
 </section>
+
+<script>
+  (function () {
+    const titleElement = document.getElementById('typing-title');
+    const textElement = document.getElementById('typing-text');
+    const cursorElement = document.getElementById('typing-cursor');
+    
+    if (!titleElement || !textElement || !cursorElement) return;
+    
+    const fullText = titleElement.getAttribute('data-text') || '';
+    if (!fullText) return;
+    
+    let currentIndex = 0;
+    const typingSpeed = 30; // milisegundos por letra (más rápido)
+    
+    function typeText() {
+      if (!textElement) return;
+      
+      if (currentIndex < fullText.length) {
+        textElement.textContent = fullText.substring(0, currentIndex + 1);
+        currentIndex++;
+        setTimeout(typeText, typingSpeed);
+      } else {
+        // Ocultar cursor inmediatamente cuando termine
+        if (cursorElement) {
+          cursorElement.style.display = 'none';
+        }
+      }
+    }
+    
+    // Iniciar animación cuando el elemento sea visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            typeText();
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    observer.observe(titleElement);
+  })();
+</script>
+
+<style>
+  .typing-cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+    color: currentColor;
+  }
+  
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

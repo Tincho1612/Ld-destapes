@@ -8,7 +8,7 @@ export const es: Translations = {
     contact: 'Contacto',
   },
   hero: {
-    title: 'La fuerza que desatasca tus cañerías',
+    title: 'La fuerza que destapa tus cañerías',
     subtitle:
       'Servicios profesionales de destapes industriales con maquinaria de última tecnología. Soluciones rápidas y eficientes para cañerías, cloacas y sistemas de drenaje.',
     ctaPrimary: 'Solicitar presupuesto',
@@ -46,7 +46,7 @@ export const es: Translations = {
       {
         title: 'Garantía de trabajo',
         description:
-          'Todos nuestros servicios están respaldados por garantía. Tu satisfacción es nuestra prioridad.',
+          'Ofrecemos garantía personalizada en todos nuestros servicios. Al contactarnos, evaluamos tu caso y acordamos los términos de garantía según las características específicas del trabajo.',
       },
     ],
   },
@@ -66,21 +66,6 @@ export const es: Translations = {
         name: 'Batan',
         description:
           'Atención en Batan y zonas aledañas. Llegamos rápido para resolver tus problemas de destapes industriales y residenciales.',
-      },
-      {
-        name: 'Chapadmalal',
-        description:
-          'Servicio extendido a Chapadmalal. Destapes profesionales con maquinaria de última tecnología.',
-      },
-      {
-        name: 'Miramar',
-        description:
-          'Cobertura en Miramar y alrededores. Equipos especializados para cualquier tipo de destape.',
-      },
-      {
-        name: 'Necochea',
-        description:
-          'Atención en Necochea. Servicio de emergencias 24/7 para destapes urgentes.',
       },
       {
         name: 'Otras localidades',
@@ -113,7 +98,7 @@ export const es: Translations = {
       {
         question: '¿Ofrecen garantía en sus trabajos?',
         answer:
-          'Sí, todos nuestros servicios incluyen garantía. Para destapes residenciales ofrecemos 30 días de garantía, y para trabajos industriales garantías extendidas según el caso.',
+          'Sí, ofrecemos garantía en todos nuestros trabajos. La garantía es personalizada y se acuerda al contactarnos, ya que depende de varios factores como el tipo de trabajo, las características de las cañerías y la complejidad del caso. Contáctanos para conocer los términos de garantía específicos para tu situación.',
       },
       {
         question: '¿Atienden emergencias fuera de horario?',
