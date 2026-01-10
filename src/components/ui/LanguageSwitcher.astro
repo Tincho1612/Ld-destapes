@@ -1,0 +1,41 @@
+---
+import type { Locale } from '@/i18n';
+
+interface Props {
+  currentLocale: Locale;
+  variant?: 'desktop' | 'mobile';
+}
+
+const { currentLocale, variant = 'desktop' } = Astro.props;
+const otherLocale: Locale = currentLocale === 'es' ? 'en' : 'es';
+const currentPath = Astro.url.pathname;
+const newPath = currentPath.replace(`/${currentLocale}`, `/${otherLocale}`);
+
+const isMobile = variant === 'mobile';
+---
+
+<div class={`flex items-center ${isMobile ? 'space-x-3' : 'space-x-2'}`}>
+  <a
+    href={newPath}
+    class={`${
+      isMobile
+        ? 'flex-1 px-4 py-2.5 text-sm font-medium text-neutral-700 bg-neutral-100 hover:bg-neutral-200 transition-colors rounded-lg border border-neutral-200 text-center'
+        : 'px-3 py-1.5 text-sm font-medium text-neutral-700 hover:text-primary-600 transition-colors rounded-md hover:bg-neutral-100'
+    }`}
+    aria-label={`Cambiar a ${otherLocale === 'es' ? 'Español' : 'English'}`}
+  >
+    <span class="flex items-center justify-center space-x-2">
+      {isMobile ? (
+        <>
+          <span>{currentLocale === 'es' ? '🇪🇸' : '🇬🇧'}</span>
+          <span class="font-semibold">{currentLocale.toUpperCase()}</span>
+          <span class="text-neutral-400">→</span>
+          <span>{otherLocale === 'es' ? '🇪🇸' : '🇬🇧'}</span>
+          <span class="font-semibold">{otherLocale.toUpperCase()}</span>
+        </>
+      ) : (
+        <span>{otherLocale === 'es' ? 'ES' : 'EN'}</span>
+      )}
+    </span>
+  </a>
+</div>

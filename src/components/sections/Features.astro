@@ -1,0 +1,64 @@
+---
+import Container from '../ui/Container.astro';
+import Section from '../ui/Section.astro';
+import { getTranslations, getLocaleFromPath } from '@/i18n';
+import Icon from '@/react/ui/Icon';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const t = getTranslations(locale);
+
+const iconNames = ['Shield', 'TrendingUp', 'Zap', 'BarChart3', 'HeadphonesIcon', 'FileCheck'];
+---
+
+<Section id="features" variant="alt">
+  <Container>
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+        {t.features.title}
+      </h2>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+        {t.features.subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      {t.features.items.map((feature, index) => {
+        const iconName = iconNames[index] || 'Shield';
+        return (
+          <div
+            class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-neutral-200 hover:shadow-md transition-shadow animate-on-scroll"
+          >
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <Icon client:load name={iconName} className="w-6 h-6 text-primary-700" />
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-3">
+              {feature.title}
+            </h3>
+            <p class="text-neutral-600 leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </Container>
+</Section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
