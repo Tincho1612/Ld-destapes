@@ -1,0 +1,60 @@
+---
+import Container from '../ui/Container.astro';
+import Section from '../ui/Section.astro';
+import { getTranslations, getLocaleFromPath } from '@/i18n';
+import Icon from '@/react/ui/Icon';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const t = getTranslations(locale);
+---
+
+<Section id="testimonials" variant="alt">
+  <Container>
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+        {t.testimonials.title}
+      </h2>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+        {t.testimonials.subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {t.testimonials.items.map((testimonial) => (
+        <div
+          class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-neutral-200 hover:shadow-md transition-shadow animate-on-scroll"
+        >
+          <Icon client:load name="Quote" className="w-8 h-8 text-primary-300 mb-4" />
+          <p class="text-neutral-700 mb-6 leading-relaxed italic">
+            "{testimonial.text}"
+          </p>
+          <div>
+            <p class="font-semibold text-neutral-900">{testimonial.name}</p>
+            <p class="text-sm text-neutral-600">
+              {testimonial.role}, {testimonial.company}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

@@ -1,0 +1,61 @@
+---
+import Container from '../ui/Container.astro';
+import Section from '../ui/Section.astro';
+import { getTranslations, getLocaleFromPath } from '@/i18n';
+import Icon from '@/react/ui/Icon';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const t = getTranslations(locale);
+---
+
+<Section id="faq">
+  <Container>
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+        {t.faq.title}
+      </h2>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+        {t.faq.subtitle}
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      {t.faq.items.map((item, index) => (
+        <div
+          class="bg-white border border-neutral-200 rounded-lg overflow-hidden animate-on-scroll"
+        >
+          <button
+            class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-50 transition-colors"
+            onclick={`this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180')`}
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-neutral-900 pr-4">{item.question}</span>
+            <Icon client:load name="ChevronDown" className="w-5 h-5 text-neutral-600 flex-shrink-0 transition-transform" />
+          </button>
+          <div class="hidden px-6 pb-4 text-neutral-600 leading-relaxed">
+            {item.answer}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

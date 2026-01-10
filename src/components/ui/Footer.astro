@@ -1,0 +1,110 @@
+---
+import Container from './Container.astro';
+import { getTranslations, getLocaleFromPath } from '@/i18n';
+import { SITE_NAME } from '@/lib/constants';
+import Icon from '@/react/ui/Icon';
+import logoToro from '@/assets/logo-toro.svg';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const t = getTranslations(locale);
+---
+
+<footer class="bg-neutral-900 text-neutral-300">
+  <Container>
+    <div class="py-12 sm:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <img
+              src={logoToro.src}
+              alt={SITE_NAME}
+              class="h-10 w-auto object-contain"
+            />
+            <span class="text-xl font-bold text-white">{SITE_NAME}</span>
+          </div>
+          <p class="text-sm text-neutral-400 max-w-md">{t.footer.description}</p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">{t.footer.links.product}</h3>
+          <ul class="space-y-2">
+            {t.footer.product.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-neutral-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">{t.footer.links.company}</h3>
+          <ul class="space-y-2">
+            {t.footer.company.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-neutral-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">{t.footer.links.legal}</h3>
+          <ul class="space-y-2">
+            {t.footer.legal.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-neutral-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social & Copyright -->
+      <div class="mt-12 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+        <p class="text-sm text-neutral-400">{t.footer.copyright}</p>
+        <div class="flex items-center space-x-4">
+          <a
+            href="#"
+            class="text-neutral-400 hover:text-white transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Icon client:load name="Linkedin" size={20} />
+          </a>
+          <a
+            href="#"
+            class="text-neutral-400 hover:text-white transition-colors"
+            aria-label="Twitter"
+          >
+            <Icon client:load name="Twitter" size={20} />
+          </a>
+          <a
+            href="#"
+            class="text-neutral-400 hover:text-white transition-colors"
+            aria-label="GitHub"
+          >
+            <Icon client:load name="Github" size={20} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</footer>

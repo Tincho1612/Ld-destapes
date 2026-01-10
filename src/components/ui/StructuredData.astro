@@ -1,0 +1,101 @@
+---
+// Structured Data (Schema.org) for Local Business SEO
+// This helps Google understand your business and can show rich snippets in search results
+
+const locale = Astro.props.locale || 'es';
+const siteUrl = 'https://destapeseltoro.com';
+
+// Local Business Schema for Mar del Plata
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteUrl}/#organization`,
+  name: 'Destapes el Toro',
+  description: locale === 'es'
+    ? 'Servicios profesionales de destapes industriales de cañerías y cloacas con maquinaria de última tecnología en Mar del Plata y alrededores.'
+    : 'Professional industrial drain cleaning services for pipes and sewers with state-of-the-art machinery in Mar del Plata and surrounding areas.',
+  url: siteUrl,
+  logo: `${siteUrl}/logo-toro.svg`,
+  image: `${siteUrl}/og-image.jpg`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Mar del Plata',
+    addressRegion: 'Buenos Aires',
+    addressCountry: 'AR',
+  },
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Mar del Plata',
+    },
+    {
+      '@type': 'City',
+      name: 'Batan',
+    },
+    {
+      '@type': 'City',
+      name: 'Chapadmalal',
+    },
+    {
+      '@type': 'City',
+      name: 'Miramar',
+    },
+    {
+      '@type': 'City',
+      name: 'Necochea',
+    },
+  ],
+  serviceType: [
+    'Destapes industriales',
+    'Destapes de cañerías',
+    'Destapes de cloacas',
+    'Limpieza de drenajes',
+    'Servicios de emergencia 24/7',
+  ],
+  priceRange: '$$',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '10',
+  },
+  sameAs: [
+    // Add your social media profiles here when available
+    // 'https://www.facebook.com/destapeseltoro',
+    // 'https://www.instagram.com/destapeseltoro',
+  ],
+};
+
+// Organization Schema
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Destapes el Toro',
+  url: siteUrl,
+  logo: `${siteUrl}/logo-toro.svg`,
+  description: locale === 'es'
+    ? 'Servicios profesionales de destapes industriales en Mar del Plata'
+    : 'Professional industrial drain cleaning services in Mar del Plata',
+};
+
+// Service Schema
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Destapes industriales',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Destapes el Toro',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Mar del Plata',
+  },
+  description: locale === 'es'
+    ? 'Servicios de destapes industriales de cañerías y cloacas con maquinaria de última tecnología'
+    : 'Industrial drain cleaning services for pipes and sewers with state-of-the-art machinery',
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

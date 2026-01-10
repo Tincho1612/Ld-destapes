@@ -1,0 +1,48 @@
+---
+import { getSEO } from '@/lib/seo';
+import type { Locale } from '@/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  locale?: Locale;
+  path?: string;
+}
+
+const { title, description, image, locale = 'es', path = '' } = Astro.props;
+const seo = getSEO({ title, description, image, locale, path });
+---
+
+<!-- Primary Meta Tags -->
+<title>{seo.title}</title>
+<meta name="title" content={seo.title} />
+<meta name="description" content={seo.description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={seo.openGraph.type} />
+<meta property="og:url" content={seo.openGraph.url} />
+<meta property="og:title" content={seo.openGraph.title} />
+<meta property="og:description" content={seo.openGraph.description} />
+<meta property="og:image" content={seo.openGraph.images[0].url} />
+<meta property="og:image:width" content={seo.openGraph.images[0].width.toString()} />
+<meta property="og:image:height" content={seo.openGraph.images[0].height.toString()} />
+<meta property="og:locale" content={seo.openGraph.locale} />
+<meta property="og:site_name" content={seo.openGraph.siteName} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content={seo.twitter.card} />
+<meta name="twitter:url" content={seo.openGraph.url} />
+<meta name="twitter:title" content={seo.twitter.title} />
+<meta name="twitter:description" content={seo.twitter.description} />
+<meta name="twitter:image" content={seo.twitter.images[0]} />
+
+<!-- Additional -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#003380" />
+<link rel="canonical" href={seo.openGraph.url} />
+<meta name="keywords" content="destapes industriales, destapes cañerías, destapes cloacas, Mar del Plata, Batan, Chapadmalal, Miramar, Necochea, destape urgente, limpieza de drenajes" />
+<meta name="author" content="Destapes el Toro" />
+<meta name="geo.region" content="AR-B" />
+<meta name="geo.placename" content="Mar del Plata" />
+<meta name="language" content={locale === 'es' ? 'es-AR' : 'en-US'} />

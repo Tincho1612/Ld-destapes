@@ -1,0 +1,14 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  variant?: 'default' | 'alt';
+}
+
+const { id, class: className = '', variant = 'default' } = Astro.props;
+const bgClass = variant === 'alt' ? 'bg-neutral-50' : 'bg-white';
+---
+
+<section id={id} class={`py-16 sm:py-20 lg:py-24 ${bgClass} ${className}`}>
+  <slot />
+</section>
