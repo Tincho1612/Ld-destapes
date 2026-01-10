@@ -7,10 +7,13 @@ import {
   FileCheck,
   Quote,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Check,
   Linkedin,
   Twitter,
   Github,
+  Instagram,
   MapPin,
   type LucideIcon,
 } from 'lucide-react';
@@ -24,10 +27,13 @@ const iconMap: Record<string, LucideIcon> = {
   FileCheck,
   Quote,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Check,
   Linkedin,
   Twitter,
   Github,
+  Instagram,
   MapPin,
 };
 

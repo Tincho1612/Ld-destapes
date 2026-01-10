@@ -32,6 +32,23 @@ cd Landing-destapes
 npm install
 ```
 
+3. Configura las variables de entorno:
+```bash
+# Copia el archivo de ejemplo
+cp .env.example .env
+
+# Edita .env con tus valores reales
+# Las variables con prefijo PUBLIC_ están disponibles en el cliente
+```
+
+**Variables de entorno disponibles:**
+- `PUBLIC_SITE_NAME` - Nombre del sitio 
+- `PUBLIC_SITE_DESCRIPTION` - Descripción para SEO
+- `PUBLIC_SITE_URL` - URL del sitio 
+- `PUBLIC_WHATSAPP_LINK` - Link de WhatsApp
+
+**Nota**: El archivo `.env` está en `.gitignore` y no se subirá al repositorio.
+
 ## 🏃 Desarrollo
 
 Inicia el servidor de desarrollo:
@@ -123,8 +140,8 @@ El proyecto soporta dos idiomas:
 - **Español (ES)** - Idioma por defecto
 - **Inglés (EN)**
 
-Las URLs incluyen el prefijo del idioma:
-- `/es/` - Versión en español
+Las URLs:
+- `/` - Versión en español (ruta base, sin prefijo)
 - `/en/` - Versión en inglés
 
 El selector de idioma está disponible en el header.
@@ -138,6 +155,7 @@ El proyecto incluye:
 - Sitemap XML
 - robots.txt
 - URLs canónicas
+- Tags hreflang para SEO internacional
 
 ## 📦 Tecnologías
 

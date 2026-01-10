@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '@/i18n';
+import { getLocalePath } from '@/i18n';
 
 interface Props {
   currentLocale: Locale;
@@ -8,8 +9,14 @@ interface Props {
 
 const { currentLocale, variant = 'desktop' } = Astro.props;
 const otherLocale: Locale = currentLocale === 'es' ? 'en' : 'es';
+// Get the current path without locale prefix
 const currentPath = Astro.url.pathname;
-const newPath = currentPath.replace(`/${currentLocale}`, `/${otherLocale}`);
+let pathWithoutLocale = currentPath;
+if (currentPath.startsWith('/en')) {
+  pathWithoutLocale = currentPath.replace('/en', '') || '/';
+}
+// Build new path with other locale
+const newPath = getLocalePath(otherLocale, pathWithoutLocale === '/' ? '' : pathWithoutLocale);
 
 const isMobile = variant === 'mobile';
 ---

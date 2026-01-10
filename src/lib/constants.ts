@@ -1,6 +1,8 @@
-export const SITE_NAME = 'Destapes el Toro';
-export const SITE_DESCRIPTION = 'Servicios profesionales de destapes industriales de cañerías y cloacas con maquinaria de última tecnología';
-export const SITE_URL = 'https://destapeseltoro.com';
+export const SITE_NAME = import.meta.env.PUBLIC_SITE_NAME;
+export const SITE_DESCRIPTION =
+  import.meta.env.PUBLIC_SITE_DESCRIPTION;
+export const SITE_URL = import.meta.env.PUBLIC_SITE_URL;
+export const WHATSAPP_LINK = import.meta.env.PUBLIC_WHATSAPP_LINK;
 
 export const BRAND_COLORS = {
   primary: '#003380',

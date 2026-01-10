@@ -46,7 +46,7 @@ export const en: Translations = {
       {
         title: 'Work guarantee',
         description:
-          'All our services are backed by warranty. Your satisfaction is our priority.',
+          'We offer personalized warranty on all our services. When you contact us, we evaluate your case and agree on warranty terms based on the specific characteristics of the job.',
       },
     ],
   },
@@ -66,21 +66,6 @@ export const en: Translations = {
         name: 'Batan',
         description:
           'Service in Batan and surrounding areas. We arrive quickly to solve your industrial and residential drain cleaning problems.',
-      },
-      {
-        name: 'Chapadmalal',
-        description:
-          'Extended service to Chapadmalal. Professional drain cleaning with state-of-the-art machinery.',
-      },
-      {
-        name: 'Miramar',
-        description:
-          'Coverage in Miramar and surroundings. Specialized equipment for any type of drain cleaning.',
-      },
-      {
-        name: 'Necochea',
-        description:
-          'Service in Necochea. 24/7 emergency service for urgent drain cleaning.',
       },
       {
         name: 'Other locations',
@@ -113,7 +98,7 @@ export const en: Translations = {
       {
         question: 'Do you offer warranty on your work?',
         answer:
-          'Yes, all our services include warranty. For residential drain cleanings we offer 30-day warranty, and for industrial work we provide extended warranties depending on the case.',
+          'Yes, we offer warranty on all our work. The warranty is personalized and agreed upon when you contact us, as it depends on several factors such as the type of work, pipe characteristics, and case complexity. Contact us to learn about the specific warranty terms for your situation.',
       },
       {
         question: 'Do you handle emergencies outside business hours?',
