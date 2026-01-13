@@ -3,7 +3,7 @@ import Container from './Container.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import { getTranslations, getLocaleFromPath, getLocalePath } from '@/i18n';
 import { SITE_NAME, WHATSAPP_LINK } from '@/lib/constants';
-import logoToro from '@/assets/logo-toro.svg';
+import logoDestapes from '@/assets/destapes-logo.svg';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const t = getTranslations(locale);
@@ -15,7 +15,7 @@ const t = getTranslations(locale);
       <!-- Logo -->
       <a href={getLocalePath(locale)} class="flex items-center space-x-3 group">
         <img
-          src={logoToro.src}
+          src={logoDestapes.src}
           alt={SITE_NAME}
           class="h-10 sm:h-12 w-auto object-contain"
         />
@@ -35,6 +35,12 @@ const t = getTranslations(locale);
           class="text-neutral-700 hover:text-primary-600 transition-colors font-medium text-sm"
         >
           {t.nav.coverage}
+        </a>
+        <a
+          href="/urgencias"
+          class="text-neutral-700 hover:text-primary-600 transition-colors font-medium text-sm font-semibold"
+        >
+          Urgencias 24/7
         </a>
         <a
           href={`${getLocalePath(locale)}#faq`}
@@ -88,6 +94,12 @@ const t = getTranslations(locale);
         class="mobile-menu-link block text-neutral-700 hover:text-primary-600 transition-colors font-medium py-3 px-2 rounded-lg hover:bg-neutral-50"
       >
         {t.nav.coverage}
+      </a>
+      <a
+        href="/urgencias"
+        class="mobile-menu-link block text-neutral-700 hover:text-primary-600 transition-colors font-medium py-3 px-2 rounded-lg hover:bg-neutral-50 font-semibold"
+      >
+        Urgencias 24/7
       </a>
       <a
         href={`${getLocalePath(locale)}#faq`}

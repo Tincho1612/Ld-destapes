@@ -10,7 +10,7 @@ export const es: Translations = {
   hero: {
     title: 'La fuerza que destapa tus cañerías',
     subtitle:
-      'Servicios profesionales de destapes industriales con maquinaria de última tecnología. Soluciones rápidas y eficientes para cañerías, cloacas y sistemas de drenaje.',
+      'Empresa de destapes en Mar del Plata especializada en destapes de cañerías urgentes y destape de cloacas urgente. Servicios profesionales con maquinaria de última tecnología. Soluciones rápidas y eficientes disponibles 24/7.',
     ctaPrimary: 'Solicitar presupuesto',
     ctaSecondary: 'Ver servicios',
   },
@@ -26,7 +26,7 @@ export const es: Translations = {
       {
         title: 'Servicio 24/7 de emergencias',
         description:
-          'Atención inmediata para urgencias. Nuestro equipo está disponible cuando más lo necesitas.',
+          'Destapes urgentes Mar del Plata disponibles las 24 horas, los 365 días del año. Atención inmediata para destapes de cañerías urgentes y destape de cloacas urgente. Nuestro equipo está disponible cuando más lo necesitas.',
       },
       {
         title: 'Experiencia comprobada',
@@ -60,12 +60,12 @@ export const es: Translations = {
       {
         name: 'Mar del Plata',
         description:
-          'Cobertura completa en toda la ciudad. Servicio rápido y eficiente para destapes de cañerías, cloacas y sistemas de drenaje.',
+          'Empresa de destapes en Mar del Plata con cobertura completa en toda la ciudad. Especialistas en destapes de cañerías Mar del Plata y destape de cloacas urgente. Servicio rápido y eficiente disponible 24/7.',
       },
       {
         name: 'Batan',
         description:
-          'Atención en Batan y zonas aledañas. Llegamos rápido para resolver tus problemas de destapes industriales y residenciales.',
+          'Destapes de cañerías Batán y destapes Batán disponibles las 24 horas. Atención en Batan y zonas aledañas. Llegamos rápido para resolver tus problemas de destapes industriales y residenciales con urgencia.',
       },
       {
         name: 'Otras localidades',
@@ -103,7 +103,7 @@ export const es: Translations = {
       {
         question: '¿Atienden emergencias fuera de horario?',
         answer:
-          'Sí, ofrecemos servicio de emergencias 24/7. Puedes contactarnos en cualquier momento y nuestro equipo estará disponible para resolver tu problema.',
+          'Sí, ofrecemos servicio de emergencias 24/7, los 365 días del año. Para destapes urgentes Mar del Plata, destapes de cañerías urgentes o destape de cloacas urgente, puedes contactarnos por WhatsApp en cualquier momento y nuestro equipo estará disponible para resolver tu problema de inmediato.',
       },
       {
         question: '¿Qué métodos de pago aceptan?',
@@ -113,18 +113,136 @@ export const es: Translations = {
       {
         question: '¿En qué zonas trabajan?',
         answer:
-          'Cubrimos toda la zona metropolitana y alrededores. Para trabajos fuera de nuestra zona habitual, consulta disponibilidad y costos adicionales.',
+          'Somos una empresa de destapes en Mar del Plata con cobertura en toda la ciudad y alrededores. Ofrecemos destapes de cañerías Mar del Plata, destapes de cañerías Batán y destapes Batán. También cubrimos otras localidades de la zona. Para trabajos fuera de nuestra zona habitual, consulta disponibilidad y costos adicionales.',
       },
     ],
   },
   cta: {
     title: '¿Necesitas un destape urgente?',
-    subtitle: 'Contáctanos ahora y solucionamos tu problema en el menor tiempo posible',
+    subtitle: 'Destapes urgentes Mar del Plata disponibles 24/7. Contáctanos ahora por WhatsApp y solucionamos tu problema de destapes de cañerías urgentes o destape de cloacas urgente en el menor tiempo posible.',
     button: 'Solicitar presupuesto',
+  },
+  urgencias: {
+    title: 'Destapes Urgentes Mar del Plata - Servicio 24/7',
+    subtitle: 'Atención inmediata para emergencias de destapes',
+    hero: {
+      title: 'Destapes Urgentes Mar del Plata y Batán',
+      description:
+        '¿Necesitas un destape de cloacas urgente o destapes de cañerías urgentes? Somos la empresa de destapes en Mar del Plata especializada en emergencias. Disponibles las 24 horas, los 365 días del año. Contactanos por WhatsApp y resolvemos tu problema de inmediato.',
+      cta: 'Contactar por WhatsApp',
+      ctaSecondary: 'Ver servicios',
+    },
+    availability: {
+      title: 'Disponibilidad 24/7, 365 Días del Año',
+      description:
+        'Entendemos que las emergencias no esperan. Por eso ofrecemos servicio de destapes urgentes Mar del Plata disponible las 24 horas del día, los 365 días del año. Ya sea domingo, feriado o madrugada, nuestro equipo está listo para atender tu emergencia.',
+      items: [
+        {
+          title: 'Atención Inmediata',
+          description:
+            'Para destapes de cañerías urgentes o destape de cloacas urgente, respondemos en minutos. Nuestro equipo se moviliza rápidamente a tu ubicación en Mar del Plata o Batán.',
+        },
+        {
+          title: 'Equipos de Última Tecnología',
+          description:
+            'Contamos con maquinaria especializada para resolver cualquier tipo de emergencia, desde destapes simples hasta casos complejos de cloacas y sistemas de drenaje.',
+        },
+        {
+          title: 'Experiencia en Emergencias',
+          description:
+            'Años de experiencia resolviendo destapes urgentes Mar del Plata. Sabemos cómo actuar rápido y eficientemente para minimizar daños y resolver tu problema.',
+        },
+        {
+          title: 'Sin Costos Ocultos',
+          description:
+            'Transparencia total. Te informamos el costo antes de comenzar el trabajo. Aceptamos múltiples métodos de pago para tu comodidad.',
+        },
+      ],
+    },
+    services: {
+      title: 'Servicios de Urgencia Disponibles',
+      items: [
+        {
+          title: 'Destape de Cloacas Urgente',
+          description:
+            'Emergencias de cloacas bloqueadas que requieren atención inmediata. Resolvemos el problema rápidamente para evitar daños mayores.',
+        },
+        {
+          title: 'Destapes de Cañerías Urgentes',
+          description:
+            'Cañerías bloqueadas que necesitan destape urgente. Disponibles para cualquier tipo de cañería y diámetro en Mar del Plata y Batán.',
+        },
+        {
+          title: 'Emergencias Residenciales',
+          description:
+            'Destapes urgentes en hogares. Atendemos emergencias domésticas con la misma urgencia y profesionalismo que trabajos industriales.',
+        },
+        {
+          title: 'Emergencias Industriales',
+          description:
+            'Destapes urgentes en empresas, fábricas y comercios. Minimizamos el tiempo de inactividad con soluciones rápidas y efectivas.',
+        },
+      ],
+    },
+    contact: {
+      title: '¿Cómo Contactarnos en Caso de Urgencia?',
+      description:
+        'Para destapes urgentes Mar del Plata, destapes de cañerías urgentes o destape de cloacas urgente, contáctanos directamente por WhatsApp. Es la forma más rápida de comunicarte con nosotros y recibir atención inmediata.',
+      steps: [
+        {
+          title: '1. Contacta por WhatsApp',
+          description:
+            'Envía un mensaje por WhatsApp explicando tu emergencia. Incluye tu ubicación en Mar del Plata o Batán y una breve descripción del problema.',
+        },
+        {
+          title: '2. Respuesta Inmediata',
+          description:
+            'Respondemos en minutos. Te confirmamos disponibilidad y tiempo estimado de llegada a tu ubicación.',
+        },
+        {
+          title: '3. Llegada Rápida',
+          description:
+            'Nuestro equipo se moviliza inmediatamente con el equipo necesario para resolver tu emergencia de destapes.',
+        },
+        {
+          title: '4. Solución Eficiente',
+          description:
+            'Resolvemos tu problema de destapes urgentes con maquinaria de última tecnología y experiencia comprobada.',
+        },
+      ],
+    },
+    areas: {
+      title: 'Zonas de Cobertura para Urgencias',
+      description:
+        'Ofrecemos servicio de destapes urgentes en las siguientes zonas:',
+      items: [
+        {
+          name: 'Mar del Plata',
+          description:
+            'Destapes urgentes Mar del Plata disponibles en toda la ciudad. Cobertura completa para destapes de cañerías urgentes y destape de cloacas urgente.',
+        },
+        {
+          name: 'Batán',
+          description:
+            'Destapes de cañerías Batán y destapes Batán disponibles 24/7. Atención inmediata para emergencias en Batán y zonas aledañas.',
+        },
+        {
+          name: 'Otras Localidades',
+          description:
+            'Consultá disponibilidad para otras localidades de la zona. Evaluamos cada caso de emergencia para brindarte el mejor servicio.',
+        },
+      ],
+    },
+    cta: {
+      title: '¿Tienes una Emergencia de Destapes?',
+      subtitle:
+        'No esperes más. Contactanos ahora por WhatsApp para destapes urgentes Mar del Plata, destapes de cañerías urgentes o destape de cloacas urgente. Disponibles 24/7, 365 días del año.',
+      button: 'Contactar por WhatsApp Ahora',
+    },
   },
   footer: {
     description:
-      'Servicios profesionales de destapes industriales con maquinaria de última tecnología. Soluciones rápidas y eficientes para cañerías, cloacas y sistemas de drenaje.',
+      'Empresa de destapes en Mar del Plata especializada en destapes de cañerías urgentes y destape de cloacas urgente. Servicios profesionales con maquinaria de última tecnología disponibles 24/7, los 365 días del año.',
     links: {
       product: 'Servicios',
       company: 'Empresa',

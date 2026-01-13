@@ -3,37 +3,21 @@ import Container from '../ui/Container.astro';
 import { getTranslations, getLocaleFromPath, getLocalePath } from '@/i18n';
 import Button from '@/react/ui/Button';
 import { WHATSAPP_LINK } from '@/lib/constants';
+import logoDestapes from '@/assets/destapes-logo.svg';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const t = getTranslations(locale);
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50">
-  <!-- Background decorative element (bull horns inspired) -->
+  <!-- Background decorative element (toro logo) -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <svg
-      class="absolute top-20 right-10 w-96 h-96 text-primary-50 opacity-30"
-      viewBox="0 0 400 400"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M200 50L150 150L200 200L250 150L200 50Z"
-        fill="currentColor"
-      />
-      <path
-        d="M100 250C100 280 130 310 150 310C170 310 200 280 200 250"
-        stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
-      />
-      <path
-        d="M200 250C200 280 230 310 250 310C270 310 300 280 300 250"
-        stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
-      />
-    </svg>
+    <img
+      src={logoDestapes.src}
+      alt=""
+      class="absolute top-20 right-10 w-96 h-96 opacity-10 object-contain"
+      aria-hidden="true"
+    />
   </div>
 
   <Container>

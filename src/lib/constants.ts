@@ -5,7 +5,7 @@ export const SITE_URL = import.meta.env.PUBLIC_SITE_URL;
 export const WHATSAPP_LINK = import.meta.env.PUBLIC_WHATSAPP_LINK;
 
 export const BRAND_COLORS = {
-  primary: '#003380',
+  primary: '#000000',
   white: '#ffffff',
   gray: {
     50: '#fafafa',

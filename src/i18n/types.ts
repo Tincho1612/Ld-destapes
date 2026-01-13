@@ -64,4 +64,50 @@ export interface Translations {
     legal: Array<{ label: string; href: string }>;
     copyright: string;
   };
+  urgencias?: {
+    title: string;
+    subtitle: string;
+    hero: {
+      title: string;
+      description: string;
+      cta: string;
+      ctaSecondary: string;
+    };
+    availability: {
+      title: string;
+      description: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    services: {
+      title: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    contact: {
+      title: string;
+      description: string;
+      steps: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    areas: {
+      title: string;
+      description: string;
+      items: Array<{
+        name: string;
+        description: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      button: string;
+    };
+  };
 }
