@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/_astro/(.*)",
+      "source": "/_astro/:path*",
       "headers": [
         {
           "key": "Cache-Control",
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot))",
+      "source": "/:path*\\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(css|js))",
+      "source": "/:path*\\.(css|js)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(html|xml|txt))",
+      "source": "/:path*\\.(html|xml|txt)",
       "headers": [
         {
           "key": "Cache-Control",
