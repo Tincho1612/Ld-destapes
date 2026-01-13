@@ -15,6 +15,9 @@ import {
   Github,
   Instagram,
   MapPin,
+  Clock,
+  Wrench,
+  DollarSign,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -35,6 +38,9 @@ const iconMap: Record<string, LucideIcon> = {
   Github,
   Instagram,
   MapPin,
+  Clock,
+  Wrench,
+  DollarSign,
 };
 
 interface IconProps {

@@ -3,7 +3,7 @@ import Container from './Container.astro';
 import { getTranslations, getLocaleFromPath } from '@/i18n';
 import { SITE_NAME, WHATSAPP_LINK } from '@/lib/constants';
 import Icon from '@/react/ui/Icon';
-import logoToro from '@/assets/logo-toro.svg';
+import logoDestapes from '@/assets/destapes-logo.svg';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const t = getTranslations(locale);
@@ -17,9 +17,9 @@ const t = getTranslations(locale);
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-3 mb-4">
             <img
-              src={logoToro.src}
+              src={logoDestapes.src}
               alt={SITE_NAME}
-              class="h-10 w-auto object-contain"
+              class="h-10 w-auto object-contain brightness-0 invert"
             />
             <span class="text-xl font-bold text-white">{SITE_NAME}</span>
           </div>

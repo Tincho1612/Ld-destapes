@@ -6,7 +6,7 @@ import StructuredData from '@/components/ui/StructuredData.astro';
 import WhatsAppButton from '@/components/ui/WhatsAppButton.astro';
 import '@/styles/globals.css';
 import { getLocaleFromPath } from '@/i18n';
-import logoToro from '@/assets/logo-toro.svg';
+import logoDestapes from '@/assets/destapes-logo.svg';
 
 interface Props {
   title?: string;
@@ -23,9 +23,10 @@ const path = Astro.url.pathname;
 <html lang={locale}>
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href={logoToro.src} />
+    <link rel="icon" type="image/svg+xml" href={logoDestapes.src} />
     <SEO title={title} description={description} image={image} locale={locale} path={path} />
     <StructuredData locale={locale} />
+    <!-- Google Fonts - Optimizado con preconnect y display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

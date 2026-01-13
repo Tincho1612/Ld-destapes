@@ -11,10 +11,10 @@ export interface SEOProps {
 export function getSEO({ title, description, image, locale = 'es', path = '' }: SEOProps) {
   const siteName = 'Destapes el Toro';
   const defaultTitle = locale === 'es' 
-    ? 'Destapes el Toro - Servicios de Destapes Industriales'
+    ? 'Destapes el Toro - Destapes Urgentes Mar del Plata | Empresa de Destapes'
     : 'Destapes el Toro - Industrial Drain Cleaning Services';
   const defaultDescription = locale === 'es'
-    ? 'Servicios profesionales de destapes industriales de cañerías y cloacas con maquinaria de última tecnología. Soluciones rápidas y eficientes.'
+    ? 'Empresa de destapes en Mar del Plata. Destapes de cañerías urgentes y destape de cloacas urgente disponibles 24/7. Servicios profesionales con maquinaria de última tecnología en Mar del Plata y Batán.'
     : 'Professional industrial drain cleaning services for pipes and sewers with state-of-the-art machinery. Fast and efficient solutions.';
   
   const fullTitle = title ? `${title} | ${siteName}` : defaultTitle;

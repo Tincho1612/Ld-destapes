@@ -1,0 +1,61 @@
+---
+// Emergency Service Schema for Urgencias page
+const siteUrl = 'https://destapeseltoro.com';
+const whatsappLink = import.meta.env.PUBLIC_WHATSAPP_LINK || 'https://wa.link/znlcqt';
+
+const emergencyServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EmergencyService',
+  name: 'Destapes Urgentes Mar del Plata - Destapes el Toro',
+  description: 'Servicio de destapes urgentes disponibles 24/7, 365 días del año. Especialistas en destapes de cañerías urgentes y destape de cloacas urgente en Mar del Plata y Batán.',
+  url: `${siteUrl}/urgencias`,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Destapes el Toro',
+    url: siteUrl,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Mar del Plata',
+      addressRegion: 'Buenos Aires',
+      addressCountry: 'AR',
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Mar del Plata',
+      },
+      {
+        '@type': 'City',
+        name: 'Batán',
+      },
+    ],
+  },
+  serviceType: [
+    'Destapes urgentes',
+    'Destapes de cañerías urgentes',
+    'Destape de cloacas urgente',
+    'Emergencias de destapes',
+  ],
+  hoursAvailable: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: whatsappLink,
+    serviceType: 'WhatsApp',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(emergencyServiceSchema)} />
